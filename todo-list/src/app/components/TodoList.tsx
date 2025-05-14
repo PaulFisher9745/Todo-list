@@ -14,7 +14,7 @@ type todoListProps = {
 const TodoList = ({ todoLists, handleDeleteTask, handleCompleted }: todoListProps) => {
   return (
     <div>
-      {todoLists.map((todo: any) => (
+      {todoLists.map((todo: { id: number; task: string; completed: boolean }) => (
         <div className={styles.todoList} key={todo.id}>
           <input onClick={() => handleCompleted(todo)} type="checkbox" />
           <span
