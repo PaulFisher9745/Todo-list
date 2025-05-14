@@ -1,0 +1,85 @@
+body {
+    box-sizing: border-box;
+    color: var(--font-color);
+    background-color: var(--background-color);
+    transition: all 0.8s ease;
+}
+
+.main {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 800px;
+    min-height: 400px;
+    margin: 100px auto;
+    display: flex;
+}
+
+.changeTheme {
+    padding: 5px;
+    background-color: #e5e5e5;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 1px solid;
+    box-shadow: 1px 1px 5px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.addForm {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.addInput {
+    display: flex;
+    width: 400px;
+    height: 25px;
+    border-color: none;
+}
+
+.addInput:focus {
+    outline: none;
+}
+
+.addBtn {
+    width: 100px;
+    background: linear-gradient(to right, #5dd361, #96db46);
+    border-radius: 8px;
+    border: 1px solid;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px 0px;
+}
+
+.todoList {
+   justify-content: space-between;
+    display: flex;
+    width: 500px;
+    margin-top: 30px;
+    padding: 10px;
+    border: 1px solid;
+    border-color: var(--border-color);
+    border-radius: 8px;
+    transition: border-color 0.8s ease;
+}
+
+.lineThrough {
+    text-decoration: line-through
+ }
+
+.defaultStyle {
+    text-decoration: none;
+}
+
+:root {
+  --background-color:  #f5f5f5;
+  --font-color: #333333;
+  --border-color: #000000;
+}
