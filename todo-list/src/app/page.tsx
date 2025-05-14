@@ -15,7 +15,7 @@ const HomePage = () => {
   const [todo, setTodo] = useState("");
   const [todoLists, setTodoLists] = useState<Todo[]>([]);
 
-  const createTodoList = (e: any) => {
+  const createTodoList = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     const todoList = {
       task: todo,
@@ -48,15 +48,15 @@ const HomePage = () => {
   };
 
   const handleDeleteTask = useCallback(
-    (task: any) => {
-      setTodoLists(todoLists.filter((todo) => todo.id !== task.id));
+    (task: Todo) => {
+      return setTodoLists(todoLists.filter((todo) => todo.id !== task.id));
     },
     [todoLists]
   );
 
-  const handleCompleted = (todo: any) => {
-    todo.completed ? (todo.completed = false) : (todo.completed = true);
-    setTodoLists([...todoLists]);
+  const handleCompleted = (todo: Todo) => {
+    todo.completed = !todo.completed;
+    return setTodoLists([...todoLists]);
   };
 
   return (
@@ -78,7 +78,7 @@ const HomePage = () => {
           placeholder={"Введите вашу задачу"}
         />
         <button
-          onClick={(e: any) => {
+          onClick={(e: React.MouseEvent<HTMLElement>) => {
             createTodoList(e);
           }}
           className={styles.addBtn}

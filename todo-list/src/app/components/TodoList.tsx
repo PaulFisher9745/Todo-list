@@ -1,7 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "../global.module.css";
 
-const TodoList = ({ todoLists, handleDeleteTask, handleCompleted }: any) => {
+type todoListProps = {
+  todoLists: {
+    id: number;
+    task: string;
+    completed: boolean;
+  }[];
+  handleDeleteTask: (todo: { id: number; task: string; completed: boolean }) => void;
+  handleCompleted: (todo: { id: number; task: string; completed: boolean }) => void;
+}
+
+const TodoList = ({ todoLists, handleDeleteTask, handleCompleted }: todoListProps) => {
   return (
     <div>
       {todoLists.map((todo: any) => (
